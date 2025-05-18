@@ -11,5 +11,7 @@ return {
   -- debug
   { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  { import = "astrocommunity.pack.markdown" },
+
   -- import/override with your plugins folder
 }
