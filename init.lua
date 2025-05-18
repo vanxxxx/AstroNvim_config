@@ -14,6 +14,13 @@ if not pcall(require, "lazy") then
   vim.fn.getchar()
   vim.cmd.quit()
 end
-
+if vim.g.neovide then
+  vim.api.nvim_set_keymap("v", "<sc-c>", '"+y', { noremap = true })
+  vim.api.nvim_set_keymap("n", "<sc-v>", 'l"+P', { noremap = true })
+  vim.api.nvim_set_keymap("v", "<sc-v>", '"+P', { noremap = true })
+  vim.api.nvim_set_keymap("c", "<sc-v>", '<C-o>l<C-o>"+<C-o>P<C-o>l', { noremap = true })
+  vim.api.nvim_set_keymap("i", "<sc-v>", '<ESC>l"+Pli', { noremap = true })
+  vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
+end
 require "lazy_setup"
 require "polish"
